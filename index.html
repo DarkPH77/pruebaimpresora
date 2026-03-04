@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Examen de Impresoras</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 700px; margin: auto; padding: 20px; }
+    h1 { text-align: center; }
+    label { font-weight: bold; display: block; margin-top: 15px; }
+    textarea { width: 100%; height: 80px; }
+    button { margin-top: 20px; padding: 10px 20px; font-size: 16px; }
+    #resultado { margin-top: 30px; background: #f0f0f0; padding: 15px; }
+  </style>
+</head>
+<body>
+  <h1>Examen de Resolución de Incidencias de Impresoras</h1>
+
+  <label>Nombre completo:</label>
+  <input type="text" id="nombre">
+
+  <label>Problema 1: Atasco de papel</label>
+  <textarea id="p1"></textarea>
+
+  <label>Problema 2: Páginas borrosas o con rayas</label>
+  <textarea id="p2"></textarea>
+
+  <label>Problema 3: No se conecta al ordenador o Wi-Fi</label>
+  <textarea id="p3"></textarea>
+
+  <label>Problema 4: Error de tinta aunque esté lleno</label>
+  <textarea id="p4"></textarea>
+
+  <label>Problema 5: Ruidos extraños al imprimir</label>
+  <textarea id="p5"></textarea>
+
+  <button onclick="evaluar()">Enviar y Evaluar</button>
+
+  <div id="resultado"></div>
+
+  <script>
+    function evaluar() {
+      const nombre = document.getElementById('nombre').value || "Alumno";
+      const p1 = document.getElementById('p1').value;
+      const p2 = document.getElementById('p2').value;
+      const p3 = document.getElementById('p3').value;
+      const p4 = document.getElementById('p4').value;
+      const p5 = document.getElementById('p5').value;
+
+      // Simulación de evaluación (puedes reemplazarlo luego con OpenAI)
+      const resultado = `
+      Evaluación de ${nombre}:<br><br>
+      Problema 1: 8/10<br>
+      Problema 2: 7/10<br>
+      Problema 3: 9/10<br>
+      Problema 4: 8/10<br>
+      Problema 5: 10/10<br>
+      <strong>Nota final: 8.4/10</strong>
+      `;
+      document.getElementById('resultado').innerHTML = resultado;
+    }
+  </script>
+</body>
+</html>
